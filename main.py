@@ -95,7 +95,7 @@ class TicketSales():
                 num = self.entry1.get()
                 #if statement that will allow for if the number entered does begin with 0 and the length of the number enterd is a valid cell phone number
                 if len(self.entry1.get()) == 10 or num[0] == 0:
-                    #calculation for movie tickets
+                    #calculation for theater tickets
                     total = int(self.spnbox.get()) * 100
                     #making the label created equal to the amount payable and the chosen values by the user
                     self.Display.config(text="Amount Payable: R" + str(total + (0.14 * total)) + "\n" +
