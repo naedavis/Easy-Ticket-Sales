@@ -46,43 +46,64 @@ class TicketSales():
         self.btnClear.place(x=400, y=250, width= 100)
     #function that will calculate ticket prices and display them
     def Calculate(self):
-        
+        #defining a variable that will take in the value selected in the spinbox by the user
         number = self.spnbox.get()
+        #making use of try except method to make sure the values inserted by the user are of correct type
         try:
-
+            #if statement with what should happen when soccer is chosen by user
             if variable.get() == "Soccer":
+                #variable that gets the value of the entry from user
                 num = self.entry1.get()
+                #if statement that will allow for if the number entered does begin with 0 and the length of the number enterd is a valid cell phone number
                 if len(self.entry1.get()) == 10 or num[0] == 0:
+                    #calculation for soccer tickets
                     total = int(self.spnbox.get()) * 40
+                    #making the label created equal to the amount payable and the chosen values by the user
                     self.Display.config(text="Amount Payable: R" + str(total + (0.14 * total)) + "\n" +
                                              "Reservation for " + f' {variable.get()} ' + " for " + number + "\n" +
                                              "was done by " + self.entry1.get())
                 else:
+                    #if the number enterd isnt 10digits long or doesnt begin with 0 then the following will happen
+                    #message box pop up 
                     messagebox.showinfo("Error", "Input proper Cell Number!!")
+                    #clear the values enterd ny the user
                     self.entry1.delete(0, END)
                     self.spnbox.delete(0, END)
                     self.Display.config(text=" ")
+            # if the user chooses movies
             elif variable.get() == "Movies":
+                #value of entry to be stored in num variable 
                 num = self.entry1.get()
+                ##if statement that will allow for if the number entered does begin with 0 and the length of the number enterd is a valid cell phone number
                 if len(self.entry1.get()) == 10 or num[0] == 0:
+                    #calculation for movie tickets
                     total = int(self.spnbox.get()) * 75
+                     #making the label created equal to the amount payable and the chosen values by the user
                     self.Display.config(text="Amount Payable: R" + str(total + (0.14 * total)) + "\n" +
                                              "Reservation for " + f' {variable.get()} ' + " for " + number + "\n" +
                                              "was done by " + self.entry1.get())
                 else:
+                    #if the number entered isnt 10digits long or doesnt begin with 0 then the following will happen
+                    #message box pop up 
                     messagebox.showinfo("Error", "Input proper Cell Number!!")
+                    #clear the values enterd ny the user
                     self.entry1.delete(0, END)
                     self.spnbox.delete(0, END)
                     self.Display.config(text=" ")
 
             else:
                 num = self.entry1.get()
+                #if statement that will allow for if the number entered does begin with 0 and the length of the number enterd is a valid cell phone number
                 if len(self.entry1.get()) == 10 or num[0] == 0:
+                    #calculation for movie tickets
                     total = int(self.spnbox.get()) * 100
+                    #making the label created equal to the amount payable and the chosen values by the user
                     self.Display.config(text="Amount Payable: R" + str(total + (0.14 * total)) + "\n" +
                                              "Reservation for " + f' {variable.get()} ' + " for " + number + "\n" +
                                              "was done by " + self.entry1.get())
                 else:
+                    #if the number entered isnt 10digits long or doesnt begin with 0 then the following will happen
+                    #message box pop up
                     messagebox.showinfo("Error", "Input proper Cell Number!!")
                     self.entry1.delete(0, END)
                     self.spnbox.delete(0, END)
