@@ -33,17 +33,20 @@ class TicketSales():
         self.menuCat = OptionMenu(window, variable, "Soccer", "Movies", "Theater")
         self.menuCat.place(x=350, y=120, width=200)
         
-        #creating a spinbox so that the user can only choose from certain numbers # avoiding 
+        #creating a spinbox so that the user can only choose from numbers # avoiding any incorrect input from the user 
         self.spnbox = Spinbox(window, from_ =1, to= 500, bg="light blue")
         self.spnbox.place(x=400, y=180, width= 70, height= 30)
         
+        #button that will call the function that will calculate the cost of tickets and display it 
         self.btnCalc = Button(window, text= "Calculate Amount", font="Arial 15 ", command= self.Calculate)
         self.btnCalc.place(x=60, y=250)
+        
+        # button used to clear all input from the user
         self.btnClear = Button(window, text="Clear", font= "Arial 15", bg="blue", fg="white", command= self.Clear)
         self.btnClear.place(x=400, y=250, width= 100)
-#function that will calculate ticket prices and display them
+    #function that will calculate ticket prices and display them
     def Calculate(self):
-        # option = self.Display['text'] =
+        
         number = self.spnbox.get()
         try:
 
